@@ -1,6 +1,5 @@
 <h1 align="center">Hi there traveler, I'm Ruby👋</h1>
 
-<p align="center"><img src="https://github-readme-streak-stats.herokuapp.com/?user=radkinz&theme=highcontrast" alt="radkinz" /></p>
 <!--START_SECTION:waka-->
 ```text
 JavaScript   2 hrs 35 mins   ██████████████████░░░░░░░   71.72 % 

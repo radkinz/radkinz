@@ -1,4 +1,4 @@
-<h1 align="center">Hi there traveler, I'm Ruby <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"> </h1>
+<h1 align="center">Hi there traveler, I'm Ruby <img src="https://raw.githubusercontent.com/radkinz/radkinz/main/wave.gif" width="30px"> </h1>
 
 <h2>Some Stats</h2>
 

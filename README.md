@@ -1,9 +1,8 @@
-<h1 align="center">Hi there traveler, I'm Ruby <img src="https://raw.githubusercontent.com/radkinz/radkinz/main/wave.gif" width="30px"> </h1>
+<h1 align="center">Hi there traveler, I'm Ruby <img src="https://user-images.githubusercontent.com/81705278/122967910-fa9b5a00-d358-11eb-99ec-db00243bed5a.gif" width="30px"> </h1>
 
 <h2>Some Stats</h2>
 
 <!--START_SECTION:waka-->
-```text
 JavaScript   2 hrs 39 mins   ██████████████████░░░░░░░   72.14 % 
 HTML         33 mins         ███▓░░░░░░░░░░░░░░░░░░░░░   15.04 % 
 Other        15 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   07.06 % 

@@ -1,4 +1,6 @@
-<h1 align="center">Hi there traveler, I'm Ruby👋</h1>
+<h1 align="center">Hi there traveler, I'm Ruby <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"> </h1>
+
+<h2>Some Stats</h2>
 
 <!--START_SECTION:waka-->
 ```text
@@ -10,4 +12,8 @@ JSON         4 mins          ▓░░░░░░░░░░░░░░░░
 ```
 <!--END_SECTION:waka-->
 
+<h2>A Funny Joke</h2>
+
+<!-- jokes -->
+<img src="https://readme-jokes.vercel.app/api?theme=material-palenight" alt="Jokes Card"/>
 

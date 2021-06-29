@@ -4,10 +4,10 @@
 
 <!--START_SECTION:waka-->
 ```text
-CSS          6 hrs 7 mins    ███████████▓░░░░░░░░░░░░░   46.39 % 
-JavaScript   3 hrs 31 mins   ██████▓░░░░░░░░░░░░░░░░░░   26.63 % 
-HTML         3 hrs 26 mins   ██████▓░░░░░░░░░░░░░░░░░░   26.06 % 
-Git Config   6 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.79 % 
+CSS          10 hrs 26 mins  █████████████▓░░░░░░░░░░░   55.33 % 
+HTML         4 hrs 40 mins   ██████▒░░░░░░░░░░░░░░░░░░   24.76 % 
+JavaScript   3 hrs 38 mins   ████▓░░░░░░░░░░░░░░░░░░░░   19.28 % 
+Git Config   6 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.55 % 
 ```
 <!--END_SECTION:waka-->
 

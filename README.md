@@ -1,6 +1,6 @@
 <h1 align="center">Hi there traveler, I'm Ruby <img src="https://user-images.githubusercontent.com/81705278/122967910-fa9b5a00-d358-11eb-99ec-db00243bed5a.gif" width="30px"> </h1>
 
-<h2>Some Stats</h2>
+<h2>Some Weekly Stats</h2>
 
 <!--START_SECTION:waka-->
 ```text

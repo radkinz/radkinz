@@ -14,7 +14,7 @@ Markdown     18 mins         ▓░░░░░░░░░░░░░░░░
 
 <h2>More Stats</h2>
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=radkinz&theme=dark)](https://git.io/streak-stats)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=radkinz&theme=highcontrast)](https://git.io/streak-stats)
 
 <h2>A Funny Joke</h2>
 

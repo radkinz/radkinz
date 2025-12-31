@@ -16,12 +16,7 @@ except ImportError:
 USERNAME = os.environ["SOUNDCLOUD_USERNAME"]
 POOL = int(os.environ.get("SOUNDCLOUD_POOL", "20"))      # sample from N most recent likes
 SEED = os.environ.get("SOUNDCLOUD_SEED", "")             # optional deterministic randomness
-README_PATH = os.environ.get("README_PATH", "README.md")
 SVG_PATH = os.environ.get("SVG_PATH", "assets/soundcloud-like.svg")
-
-START_MARKER = "<!-- SC_LIKES:START -->"
-END_MARKER = "<!-- SC_LIKES:END -->"
-
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; github-readme-bot/1.0)"}
 
 
@@ -182,41 +177,21 @@ def make_svg_card(username: str, track: dict | None) -> str:
 '''
     return svg
 
-
-def replace_readme_block(readme_text: str, svg_rel_path: str) -> str:
-    content = f"![SoundCloud]({svg_rel_path})"
-    pattern = re.compile(re.escape(START_MARKER) + r"[\s\S]*?" + re.escape(END_MARKER))
-    if not pattern.search(readme_text):
-        raise RuntimeError(f"README markers not found: {START_MARKER} ... {END_MARKER}")
-    return pattern.sub(f"{START_MARKER}\n{content}\n{END_MARKER}", readme_text)
-
-
 def main():
-    # Ensure assets dir exists
+    # Ensure output directory exists
     os.makedirs(os.path.dirname(SVG_PATH) or ".", exist_ok=True)
 
     page = fetch_likes_page(USERNAME)
     tracks = extract_likes_from_html(page, POOL)
     track = pick_random_track(tracks)
 
+    print(f"Extracted {len(tracks)} tracks from likes page.")
+
     svg = make_svg_card(USERNAME, track)
     with open(SVG_PATH, "w", encoding="utf-8") as f:
         f.write(svg)
 
-    with open(README_PATH, "r", encoding="utf-8") as f:
-        readme = f.read()
-
-    # Use a relative path for README embed
-    svg_rel = "./" + SVG_PATH.replace("\\", "/").lstrip("./")
-    updated = replace_readme_block(readme, svg_rel)
-
-    if updated != readme:
-        with open(README_PATH, "w", encoding="utf-8") as f:
-            f.write(updated)
-
-    print(f"Wrote SVG: {SVG_PATH}")
-    print("README block ensured.")
-
+    print(f"Wrote SVG to {SVG_PATH}")
 
 if __name__ == "__main__":
     main()

@@ -23,7 +23,7 @@ jobs:
 
       - name: Generate SVG
         env:
-          SOUNDCLOUD_USERNAME: ${{ secrets.SOUNDCLOUD_USERNAME }}
+          SOUNDCLOUD_USERNAME: radkinz
           SOUNDCLOUD_POOL: "20"
           SVG_PATH: "assets/soundcloud-like.svg"
         run: python scripts/update_soundcloud_like_svg.py

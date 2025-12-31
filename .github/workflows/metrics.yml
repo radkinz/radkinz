@@ -1,6 +1,6 @@
 name: Metrics
 on:
-  schedule: [{cron: "0 6 * * *"}]   # daily
+  schedule: [{ cron: "0 6 * * *" }]
   workflow_dispatch:
 
 jobs:
@@ -12,12 +12,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           user: radkinz
           template: classic
-          base: header, activity, community, repositories
+          base: header, activity, repositories
+          filename: github-metrics.svg
+
+          # Language metrics (ALL public repos)
           plugin_languages: yes
-          plugin_languages_ignored: html, css
-          plugin_languages_details: bytes-size, percentage
-          plugin_activity: yes
-          plugin_activity_limit: 5
-          plugin_activity_days: 14
-          plugin_activity_filter: issue, pr, release, fork, review
-          output_action: gist
+          plugin_languages_details: percentage
+          plugin_languages_limit: 8

@@ -25,9 +25,9 @@ I like building modular systems that are easy to test and extend. I usually star
 
 ## Fun Facts
 Outside of robots and programming, I love DJing, skating, and rock climbing. I also love music so if you're curious what I'm listening to then see below.
-<div style="display: flex; gap: 16px; align-items: flex-start;">
+<div style="display: flex; gap: 16px; align-items: center;">
   <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=2j3ftvoq8cyibf9fdhm3sly56&cover_image=true&theme=spotify-embed&show_offline=false&background_color=121212&interchange=false&profanity=false&mode=dark&bar_color=53b14f&bar_color_cover=false"
-       height="180" />
+       height="150" />
 
-  <img src="./assets/soundcloud-like.svg" height="180" />
+  <img src="./assets/soundcloud-like.svg" height="165" />
 </div>

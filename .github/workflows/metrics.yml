@@ -16,8 +16,12 @@ jobs:
           filename: metrics.plugin.languages.details.svg
           base: ""
           plugin_languages: true
-          plugin_languages_limit: 4
+          plugin_languages_indepth: true
+          repositories_affiliations: owner
+          repositories: 200
+          plugin_languages_limit: 8
           plugin_languages_details: bytes-size, percentage
-          plugin_languages_ignored: >-
-            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
-            gnuplot
+          # Temporarily comment this out while debugging:
+          # plugin_languages_ignored: >-
+          #   html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell, gnuplot
+

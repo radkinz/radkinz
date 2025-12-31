@@ -30,8 +30,7 @@ And, most importantly, I try to keep it fun! The projects I enjoy most are the o
 - Exploring how autonomy and robot-style logic can be applied to playful, creative interactive systems.
 
 ## Fun Facts
+Outside of programming, I love DJing, skating, and rock climbing.
 
-[![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=2j3ftvoq8cyibf9fdhm3sly56&cover_image=true&theme=spotify-embed&show_offline=false&background_color=121212&interchange=false&profanity=false&mode=light&bar_color=53b14f&bar_color_cover=false)](https://github.com/kittinan/spotify-github-profile)
+[![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=2j3ftvoq8cyibf9fdhm3sly56&cover_image=true&theme=spotify-embed&show_offline=false&background_color=121212&interchange=false&profanity=false&mode=dark&bar_color=53b14f&bar_color_cover=false)](https://github.com/kittinan/spotify-github-profile)
 
-<!-- jokes -->
-<img src="https://readme-jokes.vercel.app/api?theme=material-palenight" alt="Jokes Card"/>

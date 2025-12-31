@@ -1,21 +1,23 @@
 name: Metrics
+
 on:
-  schedule: [{ cron: "0 6 * * *" }]
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Most used languages (detailed)
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          user: radkinz
-          template: classic
-          base: header, activity, repositories
-          filename: github-metrics.svg
-
-          # Language metrics (ALL public repos)
-          plugin_languages: yes
-          plugin_languages_details: percentage
-          plugin_languages_limit: 8
+          filename: metrics.plugin.languages.details.svg
+          base: ""
+          plugin_languages: true
+          plugin_languages_limit: 4
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_ignored: >-
+            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
+            gnuplot

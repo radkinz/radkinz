@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="190" viewBox="0 0 720 190" role="img" aria-label="SoundCloud random recent like">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="180" viewBox="0 0 600 180" role="img" aria-label="SoundCloud random recent like">
     <defs>
         <linearGradient id="bgGrad" x1="0" x2="0" y1="0" y2="1">
         <stop offset="0" stop-color="#111111"/>
@@ -9,14 +9,14 @@
         </filter>
     </defs>
 
-    <a href="https://soundcloud.com/drinksonmemusic/christmassong" target="_blank" rel="noopener noreferrer">
-        <rect x="12" y="12" width="696" height="166" rx="18" fill="url(#bgGrad)" stroke="#1F1F1F" filter="url(#shadow)"/>
+    <a href="https://soundcloud.com/rockafellasofficial/cotton-eyed-joe-rockafellas-remix-rednex" target="_blank" rel="noopener noreferrer">
+        <rect x="12" y="12" width="576" height="156" rx="18" fill="url(#bgGrad)" stroke="#1F1F1F" filter="url(#shadow)"/>
 
         <!-- Header -->
         <text x="28" y="34" fill="#FF5500" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="14" font-weight="800" letter-spacing="0.2">
         SOUNDCLOUD
         </text>
-        <text x="692" y="34" fill="#B3B3B3" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12" font-weight="600">
+        <text x="572" y="34" fill="#B3B3B3" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12" font-weight="600">
         @radkinz
         </text>
 
@@ -43,18 +43,18 @@
 
         <!-- Title / Artist -->
         <text x="28" y="114" fill="#F5F5F5" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="22" font-weight="800">
-        Drinks On Me &amp; Beanie - When The Sleigh Starts…
+        Cotton Eyed Joe (Rockafellas Remix) - Rednex
         </text>
         <text x="28" y="142" fill="#B3B3B3" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="14" font-weight="650">
-        Drinks On Me
+        Rockafellas
         </text>
 
         <!-- Footer (anchored to bottom) -->
-        <text x="28" y="164" fill="#B3B3B3" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12">
+        <text x="28" y="154" fill="#B3B3B3" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12">
         Recently played
         </text>
-        <text x="692" y="164" fill="#B3B3B3" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12">
-        Updated 2025-12-31 04:49 UTC
+        <text x="572" y="154" fill="#B3B3B3" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12">
+        Updated 2025-12-31 04:56 UTC
         </text>
 
     </a>

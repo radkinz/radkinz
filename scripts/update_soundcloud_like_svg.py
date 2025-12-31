@@ -87,7 +87,7 @@ def truncate(s: str, max_chars: int) -> str:
 
 def make_svg_card(username: str, track: dict | None) -> str:
     # Card size
-    W, H = 720, 190
+    W, H = 600, 180
 
     bg = "#0B0B0B"
     panel = "#111111"

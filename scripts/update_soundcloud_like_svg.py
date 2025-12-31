@@ -6,7 +6,7 @@ import requests
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-# Optional local .env support
+# local .env support
 try:
     from dotenv import load_dotenv
     load_dotenv()
@@ -17,6 +17,7 @@ USERNAME = os.environ["SOUNDCLOUD_USERNAME"]
 POOL = int(os.environ.get("SOUNDCLOUD_POOL", "20"))      # sample from N most recent likes
 SEED = os.environ.get("SOUNDCLOUD_SEED", "")             # optional deterministic randomness
 SVG_PATH = os.environ.get("SVG_PATH", "assets/soundcloud-like.svg")
+
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; github-readme-bot/1.0)"}
 
 
@@ -86,7 +87,7 @@ def truncate(s: str, max_chars: int) -> str:
 
 def make_svg_card(username: str, track: dict | None) -> str:
     # Card size
-    W, H = 720, 160
+    W, H = 720, 190
 
     bg = "#0B0B0B"
     panel = "#111111"
@@ -106,7 +107,7 @@ def make_svg_card(username: str, track: dict | None) -> str:
         title = truncate(track["title"], 48)
         artist = truncate(track["artist"], 36)
         url = track["url"]
-        subtitle = f"Random pick from your last {min(POOL, 999)} likes"
+        subtitle = f"Recently played"
 
     title_xml = xml_escape(title)
     artist_xml = xml_escape(artist)
@@ -122,60 +123,67 @@ def make_svg_card(username: str, track: dict | None) -> str:
     for i, bh in enumerate(heights):
         x = bar_x + i * 10
         y = 34 + (44 - bh)
-        bars.append(f'<rect x="{x}" y="{y}" width="6" height="{bh}" rx="3" fill="{orange}" opacity="0.95"/>')
+        bars.append(f'<rect x="{x}" y="{y}" width="6" height="{bh}" rx="3" fill="{orange}" opacity="0.75"/>')
     bars_svg = "\n        ".join(bars)
+
+    # --- layout tuning knobs ---
+    CONTENT_OFFSET = 10          # pushes title/artist down (try 6–16)
+    HEADER_Y = 34                # baseline for "SOUNDCLOUD" + username
+    TITLE_Y = 104 + CONTENT_OFFSET
+    ARTIST_Y = 132 + CONTENT_OFFSET
+    FOOTER_Y = H - 26            # anchors footer near bottom (kills empty bottom space)
+    WAVEFORM_OFFSET_Y = 10   # try 8–16
 
     # Make whole card clickable via <a>
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="SoundCloud random recent like">
-  <defs>
-    <linearGradient id="bgGrad" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0" stop-color="{panel}"/>
-      <stop offset="1" stop-color="{bg}"/>
-    </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.45"/>
-    </filter>
-  </defs>
+    <defs>
+        <linearGradient id="bgGrad" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0" stop-color="{panel}"/>
+        <stop offset="1" stop-color="{bg}"/>
+        </linearGradient>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.45"/>
+        </filter>
+    </defs>
 
-  <a href="{url_xml}" target="_blank">
-    <rect x="12" y="12" width="{W-24}" height="{H-24}" rx="18" fill="url(#bgGrad)" stroke="{border}" filter="url(#shadow)"/>
+    <a href="{url_xml}" target="_blank" rel="noopener noreferrer">
+        <rect x="12" y="12" width="{W-24}" height="{H-24}" rx="18" fill="url(#bgGrad)" stroke="{border}" filter="url(#shadow)"/>
 
-    <!-- Header -->
-    <text x="28" y="34" fill="{orange}" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="14" font-weight="800" letter-spacing="0.2">
-      SOUNDCLOUD
-    </text>
-    <text x="{W-28}" y="34" fill="{muted}" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12" font-weight="600">
-      @{user_xml}
-    </text>
+        <!-- Header -->
+        <text x="28" y="{HEADER_Y}" fill="{orange}" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="14" font-weight="800" letter-spacing="0.2">
+        SOUNDCLOUD
+        </text>
+        <text x="{W-28}" y="{HEADER_Y}" fill="{muted}" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12" font-weight="600">
+        @{user_xml}
+        </text>
 
-    <!-- Waveform accent -->
-    <g transform="translate(0,0)">
-      {bars_svg}
-    </g>
+        <!-- Waveform accent -->
+        <g transform="translate(0,{WAVEFORM_OFFSET_Y})">
+        {bars_svg}
+        </g>
 
-    <!-- Title / Artist -->
-    <text x="28" y="92" fill="{text}" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="22" font-weight="800">
-      {title_xml}
-    </text>
-    <text x="28" y="118" fill="{muted}" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="14" font-weight="650">
-      {artist_xml}
-    </text>
+        <!-- Title / Artist -->
+        <text x="28" y="{TITLE_Y}" fill="{text}" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="22" font-weight="800">
+        {title_xml}
+        </text>
+        <text x="28" y="{ARTIST_Y}" fill="{muted}" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="14" font-weight="650">
+        {artist_xml}
+        </text>
 
-    <!-- Footer -->
-    <text x="28" y="142" fill="{muted}" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12">
-      {subtitle_xml}
-    </text>
-    <text x="{W-28}" y="142" fill="{muted}" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12">
-      Updated {stamp_xml}
-    </text>
+        <!-- Footer (anchored to bottom) -->
+        <text x="28" y="{FOOTER_Y}" fill="{muted}" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12">
+        {subtitle_xml}
+        </text>
+        <text x="{W-28}" y="{FOOTER_Y}" fill="{muted}" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12">
+        Updated {stamp_xml}
+        </text>
 
-    <!-- Orange corner tag -->
-    <path d="M{W-70} 24 L{W-24} 24 L{W-24} 70 Z" fill="{orange}" opacity="0.9"/>
-    <text x="{W-34}" y="46" fill="#111" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12" font-weight="900">♥</text>
-  </a>
-</svg>
-'''
+    </a>
+    </svg>
+    '''
+
     return svg
+
 
 def main():
     # Ensure output directory exists
@@ -192,6 +200,7 @@ def main():
         f.write(svg)
 
     print(f"Wrote SVG to {SVG_PATH}")
+
 
 if __name__ == "__main__":
     main()

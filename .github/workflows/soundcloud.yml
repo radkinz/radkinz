@@ -1,0 +1,43 @@
+name: Update SoundCloud SVG Card
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install requests beautifulsoup4 lxml
+
+      - name: Generate SoundCloud SVG
+        env:
+          SOUNDCLOUD_USERNAME: ${{ secrets.SOUNDCLOUD_USERNAME }}
+          SOUNDCLOUD_POOL: "20"
+          SVG_PATH: "assets/soundcloud-like.svg"
+        run: python scripts/update_soundcloud_like_svg.py
+      
+      - name: Commit SVG if changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/soundcloud-like.svg
+          git commit -m "Update SoundCloud SVG"
+          git push

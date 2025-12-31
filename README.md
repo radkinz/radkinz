@@ -14,13 +14,7 @@ Most of my serious robotics and research work reside in **private repos**.
 This GitHub shows how I think, build, and experiment in public and often a culmination of projects I make to just have a laugh with my friends.
 
 ## How I Build Things
-
-I like building modular systems that are easy to test and extend.
-
-I start with a clear goal, break problems into smaller pieces, and iterate as the system
-comes together. I plan enough to stay focused, then refine as I go.
-
-And, most importantly, I try to keep it fun! The projects I enjoy most are the ones I learn the most from.
+I like building modular systems that are easy to test and extend. I usually start with a clear goal, break things down into smaller pieces, and iterate as everything comes together. Most importantly, I keep it fun!
 
 ## What I’m Learning Right Now
 

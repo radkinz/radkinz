@@ -9,7 +9,7 @@
         </filter>
     </defs>
 
-    <a href="https://soundcloud.com/elkiebuby/its-2025-oomfchan-we-need-a-new-mix-1" target="_blank" rel="noopener noreferrer">
+    <a href="https://soundcloud.com/notrealzozo/porter-robinson-fell-off" target="_blank" rel="noopener noreferrer">
         <rect x="12" y="12" width="576" height="156" rx="18" fill="url(#bgGrad)" stroke="#1F1F1F" filter="url(#shadow)"/>
 
         <!-- Header -->
@@ -43,10 +43,10 @@
 
         <!-- Title / Artist -->
         <text x="28" y="114" fill="#F5F5F5" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="22" font-weight="800">
-        its 2025 oomfchan we need a new mix
+        porter robinson fell off
         </text>
         <text x="28" y="142" fill="#B3B3B3" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="14" font-weight="650">
-        buby
+        Zozo
         </text>
 
         <!-- Footer (anchored to bottom) -->
@@ -54,7 +54,7 @@
         Recently played
         </text>
         <text x="572" y="154" fill="#B3B3B3" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12">
-        Updated 2026-01-04 00:41 UTC
+        Updated 2026-01-04 00:45 UTC
         </text>
 
     </a>

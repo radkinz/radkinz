@@ -15,7 +15,6 @@ except ImportError:
 
 USERNAME = os.environ["SOUNDCLOUD_USERNAME"]
 POOL = int(os.environ.get("SOUNDCLOUD_POOL", "20"))      # sample from N most recent likes
-SEED = os.environ.get("SOUNDCLOUD_SEED", "")             # optional deterministic randomness
 SVG_PATH = os.environ.get("SVG_PATH", "assets/soundcloud-like.svg")
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; github-readme-bot/1.0)"}
@@ -62,10 +61,7 @@ def extract_likes_from_html(page_html: str, limit: int):
 def pick_random_track(tracks):
     if not tracks:
         return None
-    if SEED:
-        random.seed(SEED)
-    else:
-        random.seed()
+
     return random.choice(tracks)
 
 

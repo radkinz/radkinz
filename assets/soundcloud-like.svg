@@ -9,7 +9,7 @@
         </filter>
     </defs>
 
-    <a href="https://soundcloud.com/babyjanelives/eternal-embrace-sped-up" target="_blank" rel="noopener noreferrer">
+    <a href="https://soundcloud.com/millionaires-music/party-like-a-millionaire" target="_blank" rel="noopener noreferrer">
         <rect x="12" y="12" width="576" height="156" rx="18" fill="url(#bgGrad)" stroke="#1F1F1F" filter="url(#shadow)"/>
 
         <!-- Header -->
@@ -43,10 +43,10 @@
 
         <!-- Title / Artist -->
         <text x="28" y="114" fill="#F5F5F5" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="22" font-weight="800">
-        Eternal Embrace (Sped Up)
+        Party Like A Millionaire
         </text>
         <text x="28" y="142" fill="#B3B3B3" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="14" font-weight="650">
-        Baby Jane
+        Millionaires
         </text>
 
         <!-- Footer (anchored to bottom) -->
@@ -54,7 +54,7 @@
         Recently played
         </text>
         <text x="572" y="154" fill="#B3B3B3" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="12">
-        Updated 2026-01-04 22:15 UTC
+        Updated 2026-01-04 22:36 UTC
         </text>
 
     </a>

@@ -34,7 +34,7 @@ Outside of robots and programming, I love DJing, skating, and rock climbing. I a
       />
     </td>
     <td width="55%" valign="middle">
-      <img src="./assets/soundcloud-like.svg" width="100%" />
+      <img src="https://soundcloud-github-profile.vercel.app/api/soundcloud?user=radkinz&pool=11" width="100%" />
     </td>
   </tr>
 </table>
